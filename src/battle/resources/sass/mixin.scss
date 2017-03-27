@@ -1,0 +1,53 @@
+@mixin css3($name, $value) {
+    -webkit-#{$name}: #{$value};
+    -moz-#{$name}: #{$value};
+    -o-#{$name}: #{$value};
+    #{$name}: #{$value};
+}
+
+@mixin background-size ($sizing) {
+    background-size:$sizing;
+}
+
+@mixin transform($transx,$transy) {
+ transform:translate($transx,$transy);
+}
+
+@mixin transform-origin($positionX,$positionY){
+    transform-origin:$positionX $positionY;
+}
+
+
+
+
+
+@mixin discount($className, $height) {
+    /* discount real size */
+    $couponDetailDiscountHeight: 70px;
+    $couponDetailDiscountBgWidth: 640px;
+    $couponDetailDiscountBgHeight: 280px;
+    // discount actually size
+    $couponDetailDiscountHeightNow: $height;
+    $couponDetailDiscountBgWidthNow: $couponDetailDiscountHeightNow / $couponDetailDiscountHeight * $couponDetailDiscountBgWidth;
+    $couponDetailDiscountBgHeightNow: $couponDetailDiscountHeightNow / $couponDetailDiscountHeight * $couponDetailDiscountBgHeight;
+
+    .#{$className}{
+        width: $pageWidth;
+        height: $couponDetailDiscountHeightNow;
+        background: url(../images/text_discount.png) center 0 no-repeat;
+        @include background-size($couponDetailDiscountBgWidthNow, $couponDetailDiscountBgHeightNow);
+    }
+    .#{$className}88{
+        background-position: center 0;
+    }
+    .#{$className}85{
+        background-position: center $couponDetailDiscountHeightNow * -1;
+    }
+    .#{$className}70{
+        background-position: center $couponDetailDiscountHeightNow * -2;
+    }
+    .#{$className}50{
+        background-position: center $couponDetailDiscountHeightNow * -3;
+    }
+}
+

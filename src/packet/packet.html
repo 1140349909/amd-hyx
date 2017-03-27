@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="resources/css/index.css?timestrap=1000">
+    <script src="resources/lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(750, 1334);</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <title>恒源祥抢红包</title>
+</head>
+
+<body>
+
+
+<div class="packetBg" id="win" style="display: none">
+    <div class="commonLogo">
+        <img src="resources/images/loading/logo.png" alt="">
+    </div>
+    <div class="packetScore">
+        <span id="score"></span>积分
+    </div>
+    <div id="goResult" class="packetForm">
+        <img src="resources/images/packet/goForm.png" alt="">
+    </div>
+
+</div>
+
+
+<div class="loseBg" id="lose" style="display: none">
+    <div class="commonLogo">
+        <img src="resources/images/loading/logo.png" alt="">
+    </div>
+    <div class="loseScore">
+        <span id="errMsg"></span>
+    </div>
+    <div class="loseButton" id="goIndex">
+        <img src="resources/images/packet/goIndex.png" alt="">
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/packet">
+</script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!--<meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>-->
+    <!--横屏玩法-->
+    <!--<script data-fixed='true'>!function () {
+        var a = parseInt(window.screen.width), b = a / 622, c = RegExp("Android").test(navigator.userAgent);
+        c ? document.write('<meta name="viewport" content="width=622, minimum-scale = ' + b + ", maximum-scale = " + b + ', target-densitydpi=device-dpi">') : document.write('<meta name="viewport" content="width=622, user-scalable=no, target-densitydpi=device-dpi">')
+    }();</script>-->
+    <link rel="stylesheet" href="resources/css/result.css?timestrap=1000">
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="resources/lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(640, 1136);</script>
+    <script>
+        //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
+        document.getElementById('op').play();
+        //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            document.getElementById('op').play();
+        }, false);
+    </script>
+    <title>恒源祥抽签抢红包</title>
+</head>
+
+<body style="overflow: hidden;">
+
+<div class="resultBg">
+
+    <!--audio-->
+    <audio src="resources/audio/op.mp3" id="op" autoplay loop preload="auto"></audio>
+
+    <!--mask1-->
+    <div id="maskContainer1" style="display: none">
+        <div id="mask1" class="resultMask"></div>
+        <!--业务逻辑3：抽奖成功后判断是会员-->
+        <div id="dialogResult1" class="resultDialog">
+            <img src="resources/images/result/mask1.png" alt="">
+        </div>
+
+        <div class="scoreContainer">
+            <p><span class="score"></span>
+            <span>元</span></p>
+        </div>
+        <!--有一个按钮：去商城-->
+        <div class="goMallContainer">
+            <p class="goMall">立刻领取</p>
+        </div>
+    </div>
+
+    <!--mask2-->
+    <div id="maskContainer2" style="display: none">
+        <div id="mask2" class="resultMask"></div>
+        <!--业务逻辑3：抽奖成功后判断不是会员-->
+        <div id="dialogResult2" class="resultDialog">
+            <img src="resources/images/result/mask2.png" alt="">
+        </div>
+
+        <div class="scoreContainer">
+            <p><span class="score"></span>
+                <span>元</span></p>
+        </div>
+
+        <!--有一个表单-->
+        <div id="form">
+            <div id="formInputMobile">
+                <input type="text"
+                       class="formInput"
+                       id="inputMobile"
+                       maxlength="11"
+                       placeholder="请输入手机号">
+            </div>
+            <div id="formInputCaptcha">
+                <input type="text"
+                       class="formInputShort"
+                       id="inputCaptcha"
+                       maxlength="4"
+                       placeholder="验证码">
+                <!--准备一个发送验证码的按钮，并且要检测手机号是否为11位-->
+                <div id="sendMessage">
+                    发送
+                </div>
+            </div>
+            <div id="formInputSubmit">
+                <p class="formButton" id="submit">立刻注册</p>
+            </div>
+        </div>
+
+        <!--有一个按钮：提交-->
+        <!--<div class="formButton">
+            <p id="submit">立刻注册</p>
+        </div>-->
+    </div>
+
+    <!--mask3-->
+    <div id="maskContainer3" style="display: none">
+        <div id="mask3" class="resultMask"></div>
+        <!--业务逻辑3：下线后的互动结束界面-->
+        <div id="dialogResult3" class="resultDialog">
+            <img src="resources/images/result/mask3.png" alt="">
+        </div>
+        <!--有一个按钮：去商城-->
+        <div class="goMallContainer" style="top: 555px;">
+            <p class="goMall">前往商城</p>
+        </div>
+    </div>
+
+    <!--mask4-->
+    <div id="maskContainer4" style="display: none">
+        <div id="mask4" class="resultMask"></div>
+        <!--业务逻辑3：奖品已领完的界面-->
+        <div id="dialogResult4" class="resultDialog">
+            <img src="resources/images/result/mask4.png" alt="">
+        </div>
+        <!--有一个按钮：去商城-->
+        <div class="goMallContainer" style="top: 555px;">
+            <p class="goMall">前往商城</p>
+        </div>
+    </div>
+
+    <!--result-->
+    <div id="result">
+
+        <div class="drawContainer">
+            <img id="draw" src="" alt="请稍候" style="display: none">
+        </div>
+
+        <div id="goIndex" class="resultReturn">
+            <!--<img src="resources/images/result/icon.png" alt="">-->
+        </div>
+        <div id="goPacket" class="resultPacket">
+            <!--<img src="resources/images/result/button.png" alt="">-->
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/result">
+
+</script>
+</html>

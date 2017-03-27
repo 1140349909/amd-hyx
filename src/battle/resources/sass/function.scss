@@ -1,0 +1,13 @@
+$baseViewPortWidth: 320px;
+$baseDesignWidth: 750px;
+$baseRemFontSzie: 20px;
+
+@function parseInt($value){
+	@return $value / ( $value * 0 + 1 );
+}
+
+// Parameters' units should be 'px'
+// Variable's units should be 'px'
+@function pxToRem($px){
+	@return ($px / (2 * $baseRemFontSzie)) * 1rem;
+}

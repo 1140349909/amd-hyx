@@ -1,0 +1,36 @@
+// maks
+.mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background-color: #FFF;
+    z-index:99999;
+}
+
+.mask-main{
+  @extend %absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.boxInner{
+  height:700px;
+ overflow-y:scroll;
+  padding:0 30px;
+  box-sizing:border-box;
+  position: relative;
+  text-align:left;
+}
+.boxInner h3{text-align: center;font-size:48px;}
+.boxInner p{font-size:24px;}
+.boxInner p:nth-child(5){margin-bottom: 40px;}
+.boxInner .qrcode{text-align: center;}
+.btnClose{
+  @extend %absolute;
+  top:2px;
+  right:40px;
+}

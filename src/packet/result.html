@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="resources/css/index.css">
+    <script src="resources/lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterZoom(750, 1334);</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <title>恒源祥抢红包</title>
+</head>
+
+<body>
+
+<div class="commonBg">
+    <div class="commonLogo">
+        <img src="resources/images/loading/logo.png" alt="">
+    </div>
+
+    <div class="resultBg">
+        <div class="resultScore">
+            <p style="line-height: 700px;"><span id="total"></span>积分</p>
+        </div>
+    </div>
+
+    <div class="resultButtonIndex" id="goIndex">
+        <img src="resources/images/result/goIndex.png" alt="">
+    </div>
+    <div class="resultButtonMall" id="goMall">
+        <img src="resources/images/result/goMall.png" alt="">
+    </div>
+    <div class="resultQrcode">
+        <img src="resources/images/result/qrcode.png">
+    </div>
+    <div class="resultText">
+        <img src="resources/images/result/text.png" alt="">
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/result">
+</script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!--<meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>-->
+    <!--横屏玩法-->
+    <!--<script data-fixed='true'>!function () {
+        var a = parseInt(window.screen.width), b = a / 622, c = RegExp("Android").test(navigator.userAgent);
+        c ? document.write('<meta name="viewport" content="width=622, minimum-scale = ' + b + ", maximum-scale = " + b + ', target-densitydpi=device-dpi">') : document.write('<meta name="viewport" content="width=622, user-scalable=no, target-densitydpi=device-dpi">')
+    }();</script>-->
+    <script src="resources/lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(1334, 622);</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="resources/css/index.css">
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    <title>上海灵肯科技</title>
+</head>
+
+<body style="overflow: hidden;">
+
+<!-- loading start -->
+<div class="loading-percent">
+    <div class="page">
+        <div class="box-center">
+            <img src="resources/images/loading/loading.gif">
+
+            <div class="loading-percent-txt"></div>
+        </div>
+        <div class="company">www.iloka.me&nbsp;&nbsp;制作</div>
+    </div>
+</div>
+<!-- loading end -->
+
+<!--audio-->
+<audio id="op" autoplay loop preload="auto">
+    <source src="resources/audio/op.mp3" type="audio/mpeg"/>
+</audio>
+
+<audio id="click">
+    <source src="resources/audio/click.mp3" type="audio/mpeg"/>
+</audio>
+<!--audio end-->
+
+<div class="isHorizontal" style="display: none">
+
+    <!--mask-->
+    <div id="maskContainer">
+
+        <div id="stars" class="indexStars animated flash infinite">
+            <img src="resources/images/index/stars.png" alt="">
+        </div>
+
+        <div id="mask" class="indexMask"></div>
+
+        <div id="dialogIndex" class="indexDialog">
+            <img src="resources/images/index/dialog.png" alt="">
+        </div>
+
+        <div id="dialogGift" class="indexGift animated zoomIn">
+            <img src="resources/images/index/dialogGift.png" alt="">
+        </div>
+
+        <div id="close" class="indexClose"></div>
+        <div id="link" class="indexLink"></div>
+    </div>
+
+    <!--index-->
+    <div class="indexBg" id="bg">
+        <div id="logo" class="indexLogo animated tada">
+            <img src="resources/images/index/logo.png" alt="">
+        </div>
+        <div id="logo2" class="indexLogo2">
+            <img src="resources/images/index/logo2.png" alt="">
+        </div>
+        <div id="logo3" class="indexLogo3">
+            <img src="resources/images/loading/logo.png" alt="">
+        </div>
+        <!--点击进入help-->
+        <div id="help" class="indexHelp animated tada">
+            <img src="resources/images/index/gift.png" alt="" class="imgHelp">
+        </div>
+        <!--点击进入choose-->
+        <div id="start" class="indexStart">
+            <img src="resources/images/index/start.png" alt="">
+        </div>
+    </div>
+
+    <!--help-->
+    <div class="helpBg" style="display: none">
+        <div id="logoHelp" style="position: absolute;left:1050px;top: 0">
+            <img src="resources/images/loading/logo.png" alt="">
+        </div>
+        <div id="dialog" style="position: absolute;left:319px;top: 28px">
+            <img src="resources/images/help/dialog.png" alt="">
+        </div>
+        <div id="tomato" style="position: absolute;left:191px;top: 384px">
+            <img src="resources/images/help/tomato.png" alt="">
+        </div>
+        <div id="egg" style="position: absolute;left:1066px;top: 239px">
+            <img src="resources/images/help/egg.png" alt="">
+        </div>
+        <!--<div id="grass" style="position: absolute;left:918px;top: 242px">
+            <img src="resources/images/help/grass.png" alt="">
+        </div>-->
+        <!--点击返回index-->
+        <div id="home" style="position: absolute;left:1047px;top: 45px">
+            <img src="resources/images/help/home.png" alt="">
+        </div>
+    </div>
+
+    <!--choose-->
+    <div class="chooseBg" style="display: none">
+        <div id="chooseDialog" style="position: absolute;left:78px;top: 6px">
+            <img src="resources/images/choose/dialog.png" alt="">
+        </div>
+        <div id="banner" style="position: absolute;left:310px;top: 30px">
+            <img src="resources/images/choose/banner.png" alt="">
+        </div>
+        <!--点击选择tomato进入game-->
+        <div id="playerTomato" style="position: absolute;left:234px;top: 520px">
+            <img src="resources/images/choose/chooseTomato.png" alt="">
+        </div>
+        <!--点击选择egg进入game-->
+        <div id="playerEgg" style="position: absolute;left:846px;top: 520px">
+            <img src="resources/images/choose/chooseEgg.png" alt="">
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/index">
+
+</script>
+</html>

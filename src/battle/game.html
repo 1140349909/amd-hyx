@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!--<meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--横屏玩法-->
+    <!--<script data-fixed='true'>!function () {
+        var a = parseInt(window.screen.width), b = a / 622, c = RegExp("Android").test(navigator.userAgent);
+        c ? document.write('<meta name="viewport" content="width=640, minimum-scale = ' + b + ", maximum-scale = " + b + ', target-densitydpi=device-dpi">') : document.write('<meta name="viewport" content="width=622, user-scalable=no, target-densitydpi=device-dpi">')
+    }();</script>-->
+    <script src="resources/lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(1334, 622);</script>
+    <link rel="stylesheet" href="resources/css/index.css">
+    <title>恒源祥番茄炒蛋大战</title>
+</head>
+
+<body style="overflow: hidden;">
+
+<div class="isHorizontal" style="display: none">
+    <!-- loading start -->
+    <div class="loadingBg" id="bg">
+        <div id="loading-processBar" style="position: absolute;left:502px;top: 409px;z-index: 2">
+            <img src="resources/images/loading/loading.png" alt="">
+        </div>
+        <div id="loading-pk" style="position: absolute;left:394px;top: 229px;z-index: 2">
+            <img src="resources/images/loading/pk.png" alt="">
+        </div>
+        <div id="loading-logo" style="position: absolute;left:1050px;top: 0;z-index: 2">
+            <img src="resources/images/loading/logo.png" alt="">
+        </div>
+        <div id="container"
+             style="position: absolute;width: 522px;height: 28px;left:407px;top: 417px;z-index: 1;border: 5px solid #690f10;border-radius: 15px;">
+
+        </div>
+        <div class="loading-process-bar" style="width: 522px;height: 28px;left:412px;top: 422px;z-index: 0"></div>
+
+    </div>
+</div>
+
+<canvas id="game"></canvas>
+<!--createjs没有输入-->
+<div class="inputInfo">
+    <div class="inputForm" style="display: none">
+        <!--<input id="name" type="text" style="position: absolute;left: 560px;top: 39%;font-size: 36px;">top: 295px
+        <input id="mobile" type="tel" style="position: absolute;left: 560px;top: 55%;font-size: 36px;">top: 410px;-->
+        <input id="name" type="text"
+               style="position: absolute;left: 575px;top: 39%;
+               width: 400px;height: 50px;
+               font-size: 36px !important;">
+        <input id="mobile" type="tel"
+               style="position: absolute;left: 575px;top: 54%;
+               width: 400px;height: 50px;font-size: 36px !important;">
+    </div>
+    <div id="qrCodeContainer" style="display: none;width:200px;height:200px;position: absolute;left: 80px;top: 45%;">
+        <img id="qrCode" src="resources/images/game/result/qrCode.png" alt=""
+             style="z-index: 9999;">
+        <!--padding: 300px 50px 50px 50px-->
+    </div>
+
+    <!--<div id="dialogGift" style="position: absolute;left:527px;top: 177px;z-index: 2;" class="animated zoomIn">
+        <img src="resources/images/index/dialogGift.png" alt="">
+    </div>-->
+</div>
+
+
+</body>
+
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/game">
+
+</script>
+</html>

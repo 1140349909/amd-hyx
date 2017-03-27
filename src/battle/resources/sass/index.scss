@@ -1,0 +1,308 @@
+
+/**
+ * @author Frey_fug@linkin.mobi
+ * @copyright linkin.mobi 2015
+ */
+@charset "utf-8";
+@import 'variable';
+@import 'function';
+@import 'mixin';
+@import 'reset';
+@import 'loading';
+@import 'share';
+@import 'ruler';
+@import 'music';
+@import 'tip';
+
+// clearfix
+%clearfix{
+	&:after { content: "\002B"; display: block; height: 0; overflow: hidden; clear: both;}
+	zoom: 1;
+}
+
+%absolute{
+  position: absolute;
+}
+%boxsizing{
+  box-sizing:border-box;
+}
+%trans50{
+  left:50%;
+  transform:translateX(-50%);
+}
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+
+// font color and font family
+body, select, input, textarea, button {
+	color: $firstColor;
+  font-size:30px;
+	font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,sans-serif,arial;
+}
+
+%btnBg{
+  width: 299px;
+  height:63px;
+  background: url(../images/pic9.png);
+  font-size:30px;
+  line-height: 52px;
+  text-align: center;
+  margin-top: 76px;
+}
+
+
+
+.p-index {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.m-page {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+ @extend %absolute;    
+ overflow:hidden;
+ background-color: #FFF;
+}
+.m-page.hide {
+    z-index: 5;
+    display: none;
+}
+.mainWrap{
+  width: 750px;
+  height:1182px;
+  left: 50%;
+  top: 50%;
+  @include transform(-50%,-50%);
+  position: absolute;
+  text-align: center
+}
+
+.logo{
+  @extend %absolute;
+  right:36px;
+  top:0px;
+}
+.slogan{
+  padding-top: 136px;
+}
+.pic1{position: relative;animation:ani1 0.6s ease-out forwards;transform:translateX(-700px);}
+.six{position: relative;top:-60px;animation:ani1 0.6s ease-out 0.7s  forwards;transform:translateX(-700px);}
+.pic2{position: relative;top:-60px;animation:ani1 0.6s ease-out 1.2s forwards;transform:translateX(-700px);}
+.givingContent{
+  width:358px;
+  height:492px;
+  background: url(../images/pic8.png);
+  margin: 0 auto;
+  margin-top: 70px;
+  position: relative;
+}
+.pic7{
+  @extend %absolute;
+  top:30px;
+  left:30px;
+  opacity:0;
+  animation:fadeIn 0.5s ease-in 4s  forwards ;
+}
+.pic6{
+  @extend %absolute;
+  top:30px;
+  left:93px;
+   opacity:0;
+   animation:fadeIn 0.5s ease-in 3.5s  forwards ;
+}
+.pic5{
+  @extend %absolute;
+  top:30px;
+  left:163px;
+   opacity:0;
+  animation:fadeIn 0.5s ease-in 3s  forwards ;
+}
+.pic4{
+  @extend %absolute;
+  top:30px;
+  left:232px;
+  opacity:0;
+  animation:fadeIn 0.5s ease-in 2.5s  forwards ;
+}
+.pic3{
+  @extend %absolute;
+  top:30px;
+  left:300px;
+  opacity:0;
+  animation:fadeIn 0.5s ease-in 2s  forwards ;
+}
+.decPic{
+  padding-top: 100px;
+}
+.tit{
+  padding-top: 34px;
+  padding-bottom: 20px;
+  opacity:0;
+}
+.textWrap{
+  font-size:30px;
+  line-height: 58px;
+  opacity:0;
+}
+.banner{
+  padding-top: 84px;
+  opacity:0;
+}
+.notes{
+  @extend %absolute;
+  bottom:24px;
+  right:76px;
+  font-size:24px;
+}
+
+.ani .tit{ animation:fadeIn 1s ease-in 0.5s forwards;}
+.ani .textWrap{animation:fadeIn 1s ease-in 1.5s forwards;}
+.ani .banner{ animation:fadeIn 1s ease-in 2.5s forwards;}
+
+.boxWrap{
+  width: 556px;
+  height:760px;
+  background: url(../images/pic22.png);
+  margin: 0 auto;
+  margin-top: 192px;
+  font-size:26px;
+  padding-top: 24px;
+  line-height: 58px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.formWrap{
+  padding-top: 227px;
+  width: 613px;
+  margin:0 auto;
+  overflow:hidden;
+  position: relative;
+}
+
+.nameInput{
+  background: url(../images/pic23.png);
+  width: 487px;
+  height:62px;
+  @extend %boxsizing;
+  padding-left: 20px;
+  line-height: 48px;
+
+}
+[for="name"]{
+  float: left;
+  font-size:24px;
+}
+.telInput{
+  background: url(../images/pic24.png);
+  width: 410px;
+  height:63px;
+  font-size:30px;
+  @extend %boxsizing;
+  padding-left: 20px;
+  line-height: 48px;
+}
+[for="telNum"]{
+  float: left;
+  margin-top: 50px;
+  font-size:24px;
+}
+.messageWrap{
+  position: relative;
+}
+.tipMessage{
+  @extend %absolute;
+  top:482px;
+  left:20px;
+  font-size:24px;
+}
+.messageInputWrap{
+   width: 613px;
+  height:363px;
+  background: url(../images/pic25.png);
+  position: relative;
+  top:50px;
+  @extend %boxsizing;
+  padding:24px 30px 30px 20px;
+  font-size:30px;
+  overflow:hidden;
+}
+.messageInput{
+   width: 100%;
+   height:100%;
+}
+
+.btnSubmit{
+  @extend %btnBg;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.btnRuler{
+  @extend %btnBg;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.declare{
+  @extend %absolute,%trans50;
+  bottom:30px;
+  font-size:24px;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 15px;
+    width: 58px;
+    height: 59px;
+    background: url(../images/arrow.png) no-repeat;
+    background-size: 80%;
+    left: 50%;
+    margin-left: -22px;
+    z-index: 129;
+    animation: arrowAni 1s linear infinite;
+}
+
+@keyframes ani1{
+  0%{
+    transform:translateX(-700px);
+  }
+   100%{
+    transform:translateX(0);
+  }
+}
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+  }
+   100%{
+    opacity:1;
+  }
+}
+
+@keyframes rota1{
+  0%{
+    transform:rotate(0deg);
+  }
+   100%{
+    transform:rotate(360deg);
+  }
+}
+
+
+@keyframes arrowAni{
+  0%{transform:translateY(0px);}
+  25%{transform:translateY(-8px);}
+  50%{transform:translateY(0px);}
+  75%{transform:translateY(8px);}
+  100%{transform:translateY(0px);}
+}
+
+
+
+

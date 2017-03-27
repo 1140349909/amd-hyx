@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--横屏玩法-->
+    <script src="../lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(1334, 622);</script>
+    <title>恒源祥番茄鸡蛋大战</title>
+    <!--<title>番茄鸡蛋大战——选择</title>-->
+</head>
+
+<body style="overflow: hidden;">
+
+<div style="background: url('../images/choose/bg.png') no-repeat left top;background-size: 100% 100%;" id="bg">
+
+    <audio id="op" autoplay loop preload="auto">
+        <source src="../audio/op.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="click">
+        <source src="../audio/click.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="dialog" style="position: absolute;left:78px;top: 6px">
+        <img src="../images/choose/dialog.png" alt="">
+    </div>
+    <div id="banner" style="position: absolute;left:310px;top: 30px">
+        <img src="../images/choose/banner.png" alt="">
+    </div>
+    <!--点击选择tomato进入game-->
+    <div id="tomato" style="position: absolute;left:234px;top: 520px">
+        <img src="../images/choose/chooseTomato.png" alt="">
+    </div>
+    <!--点击选择egg进入game-->
+    <div id="egg" style="position: absolute;left:846px;top: 520px">
+        <img src="../images/choose/chooseEgg.png" alt="">
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+        data-main="resources/js/choose">
+
+</script>
+</html>

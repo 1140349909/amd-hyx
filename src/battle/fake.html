@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--横屏玩法-->
+    <script data-fixed='true'>!function () {
+        var a = parseInt(window.screen.width), b = a / 622, c = RegExp("Android").test(navigator.userAgent);
+        c ? document.write('<meta name="viewport" content="width=640, minimum-scale = ' + b + ", maximum-scale = " + b + ', target-densitydpi=device-dpi">') : document.write('<meta name="viewport" content="width=622, user-scalable=no, target-densitydpi=device-dpi">')
+    }();</script>
+    <link rel="stylesheet" href="resources/css/index.css">
+    <title>恒源祥番茄鸡蛋大战</title>
+</head>
+
+<body style="overflow: hidden;">
+
+
+<div id="qrCodeContainer">
+    <img id="qrCode" src="resources/images/qrcode.jpg" alt=""
+         style="position: absolute;left:0;top: 100px;z-index: 9999">
+</div>
+
+
+
+</body>
+
+<!--script src="resources/vendor/jquery-2.2.3/jquery.min.js"></script>
+<script src="resources/vendor/createjs/createjs-2015.11.26.min.js"></script>
+&lt;!&ndash;<script>
+
+    var canvas,stage, circle;
+    function init() {
+
+        canvas= document.getElementById('game');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+
+        stage = new createjs.Stage(canvas);
+        createjs.Ticker.addEventListener("tick", handleTick);
+        createjs.Ticker.setFPS(60);
+
+        circle = new createjs.Shape();
+        circle.graphics.f("red").dc(0, 0, 50);
+        circle.x = 0;
+        circle.y = 100;
+        stage.addChild(circle);
+        //只需要加他么这一句！
+        createjs.Tween.get(circle,{loop:true}).to({x:1000},2000);
+
+        circle.addEventListener("click", function (event) {
+            createjs.Ticker.setPaused(!createjs.Ticker.getPaused());
+        });
+
+    }
+
+    function handleTick(event) {
+        stage.update();
+    }
+</script>&ndash;&gt;
+<script src="resources/js/check.js"></script>
+<script src="resources/js/game.js"></script>-->
+<!--<script>
+    /*绘制文字*/
+    var canvas,
+            stage,
+            w = window.innerWidth,
+            h = window.innerHeight;
+
+    //初始化
+    function init() {
+        //    设置canvas属性
+        canvas = document.getElementById('game');
+        canvas.w = w;
+        canvas.h = h;
+        //    创建舞台
+        stage = new createjs.Stage(canvas);
+
+        //    绘制居中文字
+        var text1 = new createjs.Text("Hello world", "10px Arial", "blue"),
+                bounds1 = text1.getBounds();
+
+        text1.x = stage.canvas.width - bounds1.width >> 1;
+        text1.y = stage.canvas.height - bounds1.height >> 1;
+        //    绘制左边文字
+        var text2 = new createjs.Text("Hello world", "20px Arial", "black"),
+                bounds2 = text2.getBounds();
+
+        //    绘制右边文字
+        var text3 = new createjs.Text("Hello world", "30px Arial", "red"),
+                bounds3 = text3.getBounds();
+
+        text3.x = canvas.w - bounds3.width;
+
+        //    绘制下居中文字
+        var text4 = new createjs.Text("Hello world", "40px Arial", "green"),
+                bounds4 = text4.getBounds();
+
+        text4.x = stage.canvas.width - bounds4.width >> 1;
+        text4.y = stage.canvas.height - bounds4.height;
+
+        stage.addChild(text1);
+        stage.addChild(text2);
+        stage.addChild(text3);
+        stage.addChild(text4);
+
+        stage.update();
+    }
+</script>-->
+<!--<script>
+    /*绘制移动矩形*/
+    var canvas,
+            stage,
+            container,
+            w = window.innerWidth,
+            h = window.innerHeight,
+            s,
+            dt = '';
+
+    function init() {
+//        设置canvas属性
+        canvas = document.getElementById('game');
+        canvas.width = w;
+        canvas.height = h;
+//        创建舞台
+        stage = new createjs.Stage(canvas);
+//        绘制外部容器
+        container = new createjs.Container();
+        stage.addChild(container);
+
+//        创建矩形
+        s = new DrawPillars();
+
+//        注册事件
+        s.on('click', function () {
+            alert();
+        });
+
+//        PS:Shape类没有getBounds这个方法，可以通过setBounds来获得
+        var bounds = s.getBounds();
+
+//        右下角控制矩形位置
+        s.x = w - bounds.width;
+        s.y = h - bounds.height;
+
+//        加入场景
+        container.addChild(s);
+        stage.update();
+    }
+
+    function DrawPillars() {
+//        继承Shape类
+        createjs.Shape.call(this);
+        this.graphics.beginFill('#ff0000').drawRect(0, 0, 50, 50);
+//        设定矩形的边界属性，这样可以获得width和height属性
+        this.setBounds(0, 0, 50, 50);
+    }
+
+    DrawPillars.prototype = new createjs.Shape();
+
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick', tick);
+
+    function tick() {
+        if (s.x > 0 && s.x <= 10 && s.y > 0 && s.y <= 10) {
+            dt = 3;
+        } else if (s.x > 0 && s.x <= 10 && s.y > h - s.getBounds().height - 10 && s.y <= h - s.getBounds().height) {
+            dt = 2;
+        } else if (s.x > w - s.getBounds().width - 10 && s.x <= w - s.getBounds().width && s.y > 0 && s.y <= 10) {
+            dt = 1;
+        } else if (s.x > w - s.getBounds().width - 10 && s.x <= w - s.getBounds().width && s.y > h - s.getBounds().height - 10 && s.y <= h - s.getBounds().height) {
+            dt = 0;
+        }
+
+        switch (dt) {
+            case 0:
+                s.x -= 5;
+                break;
+            case 1:
+                s.y += 5;
+                break;
+            case 2:
+                s.y -= 5;
+                break;
+            case 3:
+                s.x += 5;
+                break;
+        }
+        stage.update();
+
+    }
+</script>-->
+<!--<script>
+    /*绘制图片*/
+    var cjs = createjs,
+            canvas,
+            container,
+            stage,
+            w = window.innerWidth,
+            h = window.innerHeight,
+            image;
+
+    function init() {
+        canvas = document.getElementById('game');
+        canvas.width = w;
+        canvas.height = h;
+
+        stage = new cjs.Stage(canvas);
+        container = new cjs.Container();
+        stage.addChild(container);
+
+//        加载图片
+        image = new Image();
+        image.src = "resources/hyx1927/current/images/arrow.png";
+        image.onload = handleImageLoad;
+    }
+
+    function handleImageLoad(event) {
+        var bitmap = new cjs.Bitmap(event.target);
+
+        bitmap.x = w- bitmap.getBounds().width>>1;
+        bitmap.y = h- bitmap.getBounds().height>>1;
+        bitmap.on('click',function () {
+            alert('点我！');
+        });
+
+        container.addChild(bitmap);
+        stage.update();
+    }
+</script>-->
+<!--<script>
+    /*绘制点击提示*/
+
+    var cjs = createjs,
+            canvas,
+            stage,
+            container,
+            w = window.innerWidth,
+            h = window.innerHeight,
+            s,s2,
+            dt = '';
+
+    function init() {
+        //设置canvas属性
+        canvas = document.getElementById('game');
+        canvas.width = w;
+        canvas.height = h;
+        //创建舞台
+        stage = new cjs.Stage(canvas);
+        container = new cjs.Container();//绘制外部容器
+        stage.addChild(container);
+
+        //创建矩形
+        s = new DrawArc(10, '#fff');
+        s2 = new DrawArc(10, '#fff');
+        //PS：Shape 类是没有getBounds这个方法，可以通过setBounds来获得
+        var bounds = s.getBounds(),
+                bounds2 = s2.getBounds();
+        //控制居中位置
+        s.x = w - bounds.width >>1;
+        s.y = h - bounds.height >>1;
+        s2.x = w - bounds2.width >>1;
+        s2.y = h - bounds2.height >>1;
+        s2.alpha = 0.6;
+
+        s.on('click', function () {
+            alert('提示！');
+        });
+        //加入场景
+        container.addChild(s);
+        container.addChild(s2);
+
+        //Tween
+        cjs.Tween.get(s, {loop: true})
+                .to({scaleX: 2.5, scaleY: 2.5, alpha: 0}, 1000,  cjs.Ease.linear) // jump to the new scale properties (default duration of 0)
+                .to({scaleX: 1, scaleY: 1, alpha: 1}, 0,  cjs.Ease.linear);
+
+        cjs.Ticker.setFPS(60);//设置游戏帧率
+        cjs.Ticker.on("tick", stage);
+    }
+
+    //绘制矩形 类
+    function DrawArc(r, c) {
+        cjs.Shape.call(this);//继承Shap类
+        this.graphics.beginFill(c).arc(0, 0, r, 0, 2*Math.PI);
+        this.setBounds(0,0,r,r);//设置矩形的边界属性，这样可以获得width和height属性
+    }
+    DrawArc.prototype = new cjs.Shape();//获得原型方法
+
+</script>-->
+<!--<script>
+    /*绘制动画走秀*/
+
+    var cjs = createjs,
+            canvas,
+            stage,
+            container,
+            w = window.innerWidth,
+            h = window.innerHeight;
+
+    function init() {
+        canvas = document.getElementById('game');
+        canvas.width = w;
+        canvas.height = h;
+
+        stage = new cjs.Stage(canvas);
+        container = new cjs.Container();
+        stage.addChild(container);
+
+        var data = {
+            images:['resources/hyx1927/current/images/arrow.png'],
+            frames:{
+                width:320,
+                height:504,
+                count:12
+            },
+            animations:{
+                dance:[0,11]
+            }
+        };
+
+        var spriteSheet = new cjs.SpriteSheet(data),
+                animation = new cjs.Sprite(spriteSheet,'dance');
+
+        animation.set({
+            x:0,
+            y:0,
+            scaleX:w/320,
+            scaleY:h/504
+        });
+
+        container.addChild(animation);
+
+        cjs.Ticker.setFPS(15);
+        cjs.Ticker.on('tick',stage);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>-->
+</html>

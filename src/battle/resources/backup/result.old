@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--横屏玩法-->
+    <script src="../lib/viewport.js"></script>
+    <script type="text/javascript">mobileAdapter.setAdapterViewport(1334, 622);</script>
+    <title>番茄鸡蛋大战——结果</title>
+</head>
+
+<body style="overflow: hidden;">
+
+<div style="background: url('../../resources/hyx1927/battle/images/index/bg.png') no-repeat 100% 100%" id="bg">
+    <div id="logo">
+        <img src="../images/index/logo.png" alt="" style="width: 100%;height: auto">
+    </div>
+
+</div>
+
+
+</body>
+<script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var bg = document.getElementById('bg');
+    bg.width = w;
+    bg.height = h;
+
+//    logo:336,13
+
+
+</script>
+</html>
